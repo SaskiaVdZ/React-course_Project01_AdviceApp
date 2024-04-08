@@ -1,6 +1,6 @@
 
 import './App.css';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 
 function App() {
@@ -20,16 +20,25 @@ setCount (c => c + 1);
 //async makes a function return a Promise
 //await makes a function wait for a Promise
 }
+useEffect(function(){
+  getAdvice()
+}, [])
+//to make sure that there already is a piece of advice there when you open the app
+// add an empty aray [] at the end to stop it running automatically
 
   return (
     <div className="App">
       <header className="App-header">
         <h1>{advice}</h1>
         <button onClick={getAdvice}>Get advice</button>
-        <p>You have read <strong>{count}</strong> pieces of advice</p>
+       <Message count= {count} />
       </header>
     </div>
   );
+}
+
+function Message(props){
+  return  <p>You have read <strong>{props.count}</strong> pieces of advice</p>
 }
 
 export default App;
