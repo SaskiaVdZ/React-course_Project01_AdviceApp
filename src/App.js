@@ -25,6 +25,7 @@ useEffect(function(){
 }, [])
 //to make sure that there already is a piece of advice there when you open the app
 // add an empty aray [] at the end to stop it running automatically
+//useEffect allows you to perform side effects after the component has rendered. This ensures a cleaner separation between rendering logic and side effects.
 
   return (
     <div className="App">
@@ -40,5 +41,5 @@ useEffect(function(){
 function Message(props){
   return  <p>You have read <strong>{props.count}</strong> pieces of advice</p>
 }
-
+//Props are a fundamental mechanism for passing data between components.
 export default App;
