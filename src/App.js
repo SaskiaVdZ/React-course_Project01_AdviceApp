@@ -1,5 +1,6 @@
-import "./App.css";
 import { useEffect, useState } from "react";
+import { Button } from '@mui/material';
+import "./App.css";
 
 function App() {
   const [advice, setAdvice] = useState("");
@@ -29,7 +30,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <h1 className="advice">{advice}</h1>
-        <button onClick={getAdvice}>Get advice</button>
+        <Button variant="contained" onClick={getAdvice}>Get advice</Button>
         <Message count={count} />
       </header>
     </div>

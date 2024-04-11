@@ -19,12 +19,6 @@
   font-size: 72px;
 }
 
-button {
-  color: rgb(247, 242, 242);
-  background-color: black;
-  width: 200px;
-  height: 40px;
-}
 
 .counter {
   color: pink;
