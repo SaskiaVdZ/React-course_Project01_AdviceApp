@@ -44,8 +44,8 @@ function App() {
             component="div"
             color="white">{advice}</Typography>
         </Grid>
-        <Button sx={{ mt: 3 }} variant="outlined" onClick={getAdvice}>Get advice</Button>
-        <Typography variant="subtitle1" fontSize={12}><Message count={count}></Message></Typography>
+        <Button sx={{ mt: 3, mb: 3 }} variant="outlined" onClick={getAdvice}>Get advice</Button>
+        <Message count={count}/>
       </Grid >
       </Container>
   );
@@ -53,9 +53,9 @@ function App() {
 
 function Message(props) {
   return (
-    <p className="counter">
+    <Typography variant="subtitle1" fontSize={14} className="counter">
       You have received <strong>{props.count}</strong> pieces of advice
-    </p>
+    </Typography>
   );
 }
 //Props are a fundamental mechanism for passing data between components.
