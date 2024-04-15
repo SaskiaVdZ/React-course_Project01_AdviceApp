@@ -3,6 +3,7 @@ import { Button } from '@mui/material';
 import { Grid } from '@mui/material';
 import { Typography } from '@mui/material';
 import Container from "@mui/material/Container";
+import '@fontsource/merriweather/300.css';
 import "./App.css";
 
 function App() {
@@ -31,16 +32,20 @@ function App() {
 
   return (
     <Container justify="center" className="App">
-      <Grid container direction="column" className="App-header">
+      <Grid container
+        direction="column"
+        justifyContent="center"
+        alignItems="center" 
+        className="App-header">
         <Grid item>
         <Typography className="advice" 
-            sx={{ mt: 1, mb: 2 }}
-            variant="h2"
+            sx={{ m: 2 }}
+            variant="h4"
             component="div"
             color="white">{advice}</Typography>
         </Grid>
-        <Button variant="contained" onClick={getAdvice}>Get advice</Button>
-        <Message count={count} />
+        <Button sx={{ mt: 3 }} variant="outlined" onClick={getAdvice}>Get advice</Button>
+        <Typography variant="subtitle1" fontSize={12}><Message count={count}></Message></Typography>
       </Grid >
       </Container>
   );
