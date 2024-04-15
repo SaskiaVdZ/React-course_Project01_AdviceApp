@@ -1,5 +1,8 @@
 import { useEffect, useState } from "react";
 import { Button } from '@mui/material';
+import { Grid } from '@mui/material';
+import { Typography } from '@mui/material';
+import Container from "@mui/material/Container";
 import "./App.css";
 
 function App() {
@@ -27,13 +30,19 @@ function App() {
   //useEffect allows you to perform side effects after the component has rendered. This ensures a cleaner separation between rendering logic and side effects.
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1 className="advice">{advice}</h1>
+    <Container justify="center" className="App">
+      <Grid container direction="column" className="App-header">
+        <Grid item>
+        <Typography className="advice" 
+            sx={{ mt: 1, mb: 2 }}
+            variant="h2"
+            component="div"
+            color="white">{advice}</Typography>
+        </Grid>
         <Button variant="contained" onClick={getAdvice}>Get advice</Button>
         <Message count={count} />
-      </header>
-    </div>
+      </Grid >
+      </Container>
   );
 }
 
