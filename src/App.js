@@ -49,7 +49,7 @@ function App() {
         <Message count={count}/>
       </Grid >
       <Grid item>
-      <Typography textAlign="center" color="primary" variant="body2" fontSize={12}>
+      <Typography textAlign="center" color="primary" variant="body2" fontSize={12} sx={{ mt: 3, mb: 3 }} >
         Made with <i className="fa-solid fa-heart"></i> in React and Material UI
         by Saskia van der Zanden
       </Typography>
