@@ -38,6 +38,7 @@ function App() {
         alignItems="center" 
         className="App-header">
         <Grid item>
+          <Grid item><img></img></Grid>
         <Typography className="advice" 
             sx={{ m: 2 }}
             variant="h4"
@@ -47,6 +48,12 @@ function App() {
         <Button sx={{ mt: 3, mb: 3 }} variant="outlined" onClick={getAdvice}>Get advice</Button>
         <Message count={count}/>
       </Grid >
+      <Grid item>
+      <Typography textAlign="center" color="primary" variant="body2" fontSize={12}>
+        Made with <i className="fa-solid fa-heart"></i> in React and Material UI
+        by Saskia van der Zanden
+      </Typography>
+      </Grid>
       </Container>
   );
 }
