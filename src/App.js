@@ -43,10 +43,10 @@ function App() {
   //useEffect allows you to perform side effects after the component has rendered. This ensures a cleaner separation between rendering logic and side effects.
 
   return (
-    <Container justify="center" className="App" style={{ backgroundColor }}> {/* Set background color using state */}
+    <Container alignItems="center" className="App" style={{ backgroundColor }}> {/* Set background color using state */}
       <Grid container
         direction="column"
-        justifyContent="center"
+        justifyContent="flex-end"
         alignItems="center" 
         className="App-header">
         <Grid item>
@@ -54,20 +54,20 @@ function App() {
             <img src={Illustration} alt="A person with question marks floating above their head" />
           </Grid>
           <Typography className="advice" 
-            sx={{ m: 2 }}
+            sx={{ mt: 3,  mb:3 }}
             variant="h4"
             component="div"
             color="white">{advice}</Typography>
         </Grid>
         <Button sx={{ mt: 3, mb: 3 }} variant="contained" onClick={getAdvice}>Get advice</Button>
         <Message count={count} />
-      </Grid >
-      <Grid item>
-      <Typography textAlign="center" color="primary" variant="body2" fontSize={12} sx={{ mt: 3, mb: 3 }} >
+        <Grid item>
+      <Typography className="footer" color="white" variant="body2" fontSize={12} sx={{ mt: 15, mb: 3 }} >
         Made with <i className="fa-solid fa-heart"></i> in React and Material UI
         by Saskia van der Zanden
       </Typography>
       </Grid>
+      </Grid >
       </Container>
   );
 }
