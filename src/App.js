@@ -1,15 +1,17 @@
 import { useEffect, useState } from "react";
-import { Button } from '@mui/material';
-import { Grid } from '@mui/material';
-import { Typography } from '@mui/material';
+import { Button } from "@mui/material";
+import { Grid } from "@mui/material";
+import { Typography } from "@mui/material";
 import Container from "@mui/material/Container";
-import '@fontsource/merriweather/300.css';
+import Illustration from "./images/Illustration.png";
+import "@fontsource/merriweather/300.css";
 import "./App.css";
 
 function App() {
   const [advice, setAdvice] = useState("");
-  //whever we need anything to change in the interface we need state
   const [count, setCount] = useState(0);
+  const [backgroundColor, setBackgroundColor] = useState("white"); // New state for background color
+  //whever we need anything to change in the interface we need state
 
   async function getAdvice() {
     const res = await fetch("https://api.adviceslip.com/advice");
@@ -18,35 +20,47 @@ function App() {
     setAdvice(data.slip.advice);
     setCount((c) => c + 1);
     //takes current count and adds 1 which will be the new count
-
     //async and await make promises easier to write
     //async makes a function return a Promise
     //await makes a function wait for a Promise
+    const randomColor = generateRandomColor(); // Generate random color
+    setBackgroundColor(randomColor); // Update background color
   }
+
+  const generateRandomColor = () => {
+    const red = Math.floor(Math.random() * 256);
+    const green = Math.floor(Math.random() * 256);
+    const blue = Math.floor(Math.random() * 256);
+    return `rgb(${red}, ${green}, ${blue})`;
+  };
+
   useEffect(function () {
+    // eslint-disable-next-line 
     getAdvice();
   }, []);
-  //to make sure that there already is a piece of advice there when you open the app
+   //to make sure that there already is a piece of advice there when you open the app
   // add an empty aray [] at the end to stop it running automatically
   //useEffect allows you to perform side effects after the component has rendered. This ensures a cleaner separation between rendering logic and side effects.
 
   return (
-    <Container justify="center" className="App">
+    <Container justify="center" className="App" style={{ backgroundColor }}> {/* Set background color using state */}
       <Grid container
         direction="column"
         justifyContent="center"
         alignItems="center" 
         className="App-header">
         <Grid item>
-          <Grid item><img></img></Grid>
-        <Typography className="advice" 
+          <Grid item>
+            <img src={Illustration} alt="A person with question marks floating above their head" />
+          </Grid>
+          <Typography className="advice" 
             sx={{ m: 2 }}
             variant="h4"
             component="div"
             color="white">{advice}</Typography>
         </Grid>
-        <Button sx={{ mt: 3, mb: 3 }} variant="outlined" onClick={getAdvice}>Get advice</Button>
-        <Message count={count}/>
+        <Button sx={{ mt: 3, mb: 3 }} variant="contained" onClick={getAdvice}>Get advice</Button>
+        <Message count={count} />
       </Grid >
       <Grid item>
       <Typography textAlign="center" color="primary" variant="body2" fontSize={12} sx={{ mt: 3, mb: 3 }} >
@@ -65,5 +79,5 @@ function Message(props) {
     </Typography>
   );
 }
-//Props are a fundamental mechanism for passing data between components.
+
 export default App;
