@@ -46,7 +46,7 @@ function App() {
     <Container className="App" style={{ backgroundColor}}> {/* Set background color using state */}
       <Grid container
         direction="column"
-        justifyContent="flex-end"
+        justifyContent="space-around"
         alignItems="center" 
         className="App-header"
         >
@@ -60,8 +60,10 @@ function App() {
             component="div"
             color="white">{advice}</Typography>
         </Grid>
+        <Grid item>
         <Button sx={{ mt: 3, mb: 3 }} variant="contained" onClick={getAdvice}>Get advice</Button>
         <Message count={count} />
+        </Grid>
         <Grid item>
       <Typography className="footer" color="white" variant="body2" fontSize={12} sx={{ mt: 15, mb: 3 }} >
         Made with <i className="fa-solid fa-heart"></i> in React and Material UI
