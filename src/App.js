@@ -33,7 +33,7 @@ function App() {
     const blue = Math.floor(Math.random() * 256);
     return `rgb(${red}, ${green}, ${blue})`;
   };
-
+    
   useEffect(function () {
     // eslint-disable-next-line 
     getAdvice();
@@ -43,12 +43,13 @@ function App() {
   //useEffect allows you to perform side effects after the component has rendered. This ensures a cleaner separation between rendering logic and side effects.
 
   return (
-    <Container alignItems="center" className="App" style={{ backgroundColor }}> {/* Set background color using state */}
+    <Container className="App" style={{ backgroundColor}}> {/* Set background color using state */}
       <Grid container
         direction="column"
         justifyContent="flex-end"
         alignItems="center" 
-        className="App-header">
+        className="App-header"
+        >
         <Grid item>
           <Grid item>
             <img src={Illustration} alt="A person with question marks floating above their head" />
