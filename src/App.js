@@ -35,8 +35,8 @@ function App() {
   };
     
   useEffect(function () {
-    // eslint-disable-next-line 
-    getAdvice();
+    getAdvice(getAdvice);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
    //to make sure that there already is a piece of advice there when you open the app
   // add an empty aray [] at the end to stop it running automatically
