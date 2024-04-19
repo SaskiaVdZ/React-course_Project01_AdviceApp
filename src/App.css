@@ -7,6 +7,12 @@
   color: white;
 }
 
+.footer{
+  position: absolute; 
+  left: 0 ; right: 0; bottom: 0;
+}
+
+
 @media only screen and (max-width: 375px) {
   img {
     width: 300px;

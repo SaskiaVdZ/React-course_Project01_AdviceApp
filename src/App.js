@@ -56,7 +56,7 @@ function App() {
           </Grid>
           <Typography className="advice" 
             sx={{ mt: 3,  mb:3 }}
-            variant="h4"
+            variant="h5"
             component="div"
             color="white">{advice}</Typography>
         </Grid>
@@ -64,9 +64,8 @@ function App() {
         <Button sx={{ mt: 3, mb: 3 }} variant="contained" onClick={getAdvice}>Get advice</Button>
         <Message count={count} />
         </Grid>
-        <Grid item 
-        justifySelf="flex-end">
-      <Typography className="footer" color="white" variant="body2" fontSize={12} sx={{ mt: 15, mb: 3 }} >
+        <Grid item >
+      <Typography className="footer" color="white" variant="body2" fontSize={12} sx={{ mb: 3}}  >
         Made with <i className="fa-solid fa-heart"></i> in React and Material UI
         by Saskia van der Zanden
       </Typography>
