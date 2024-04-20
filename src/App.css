@@ -19,4 +19,9 @@
   }
 }
 
+@media only screen and (max-height: 900px) {
+  .footer {
+    display: none;
+  }
+}
 
