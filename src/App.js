@@ -33,45 +33,66 @@ function App() {
     const blue = Math.floor(Math.random() * 256);
     return `rgb(${red}, ${green}, ${blue})`;
   };
-    
+
   useEffect(function () {
     getAdvice(getAdvice);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-   //to make sure that there already is a piece of advice there when you open the app
+  //to make sure that there already is a piece of advice there when you open the app
   // add an empty aray [] at the end to stop it running automatically
   //useEffect allows you to perform side effects after the component has rendered. This ensures a cleaner separation between rendering logic and side effects.
 
   return (
-    <Container className="App" style={{ backgroundColor}}> {/* Set background color using state */}
-      <Grid container
+    <Container className="App" style={{ backgroundColor }}>
+      {" "}
+      {/* Set background color using state */}
+      <Grid
+        container
         direction="column"
         justifyContent="center"
-        alignItems="center" 
+        alignItems="center"
         className="App-header"
-        >
+      >
         <Grid item>
           <Grid item>
-            <img src={Illustration} alt="A person with question marks floating above their head" />
+            <img
+              src={Illustration}
+              alt="A person with question marks floating above their head"
+            />
+            <Typography variant="subtitle1" fontSize={10} sx={{ mt: 1, mb: 1 }}>
+              Illustration: Rosina Gavrilash from Ouch!
+            </Typography>
           </Grid>
-          <Typography className="advice" 
-            sx={{ mt: 3,  mb:3 }}
+          <Typography
+            className="advice"
+            sx={{ mt: 3, mb: 3 }}
             variant="h5"
             component="div"
-            color="white">{advice}</Typography>
+            color="white"
+          >
+            {advice}
+          </Typography>
         </Grid>
         <Grid item>
-        <Button sx={{ mt: 3, mb: 3 }} variant="contained" onClick={getAdvice}>Get advice</Button>
-        <Message count={count} />
+          <Button sx={{ mt: 3, mb: 3 }} variant="contained" onClick={getAdvice}>
+            Get advice
+          </Button>
+          <Message count={count} />
         </Grid>
-        <Grid item >
-      <Typography className="footer" color="white" variant="body2" fontSize={12} sx={{ mb: 3}}  >
-        Made with <i className="fa-solid fa-heart"></i> in React and Material UI
-        by Saskia van der Zanden
-      </Typography>
+        <Grid item>
+          <Typography
+            className="footer"
+            color="white"
+            variant="body2"
+            fontSize={12}
+            sx={{ mb: 3 }}
+          >
+            Made with <i className="fa-solid fa-heart"></i> in React and
+            Material UI by Saskia van der Zanden
+          </Typography>
+        </Grid>
       </Grid>
-      </Grid >
-      </Container>
+    </Container>
   );
 }
 
